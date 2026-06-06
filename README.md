@@ -56,7 +56,7 @@ Key implementation details:
 Farneback achieves dense flow estimation by approximating each pixel neighborhood with a quadratic polynomial and equating polynomial coefficients between frames to compute displacement:
 
 ```math
-d = -(A1 + A2)^-1 (b2 - b1)
+d = -(A_1 + A_2)^{-1}(b_2 - b_1)
 ```
 
 Key implementation details:
