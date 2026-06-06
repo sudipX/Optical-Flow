@@ -92,8 +92,11 @@ The KITTI 2015 dataset provides stereo image pairs captured from a camera mounte
 Ground truth flow is decoded as:
 
 ```math
-fu = (IR - 2^15) / 64
-fv = (IG - 2^15) / 64
+f_u = \frac{I_R - 2^{15}}{64}
+```
+
+```math
+f_v = \frac{I_G - 2^{15}}{64}
 ```
 
 The validity mask (blue channel IB > 0) marks pixels with reliable ground truth annotations. This study evaluates on 194 frame pairs from the training split (`training/image_1`), spanning urban roads, parked and moving vehicles, pedestrians, and background structures.
@@ -265,7 +268,8 @@ Loads ground truth annotations and computes quantitative and qualitative compari
 **End-Point Error (EPE)** measures the mean Euclidean distance between predicted and ground truth flow vectors over all valid annotated pixels:
 
 ```math
-EPE = (1 / |V|) * sum_{(x,y) in V} sqrt((u_pred - u_gt)^2 + (v_pred - v_gt)^2)
+\text{EPE} = \frac{1}{|V|} \sum_{(x,y)\in V}
+\sqrt{(u_{\text{pred}} - u_{\text{gt}})^2 + (v_{\text{pred}} - v_{\text{gt}})^2}
 ```
 
 where V is the set of pixels with valid ground truth annotations (validity mask IB > 0). Lower EPE indicates higher accuracy.
