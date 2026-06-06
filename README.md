@@ -41,7 +41,7 @@ All implementations are built from first principles using OpenCV 4.x for classic
 
 Lucas-Kanade resolves the aperture problem by assuming constant flow within a local pixel window. The method solves a least-squares system using spatial and temporal image gradients:
 
-```
+```math
 A^T A [u, v]^T = -A^T b
 ```
 
@@ -55,7 +55,7 @@ Key implementation details:
 
 Farneback achieves dense flow estimation by approximating each pixel neighborhood with a quadratic polynomial and equating polynomial coefficients between frames to compute displacement:
 
-```
+```math
 d = -(A1 + A2)^-1 (b2 - b1)
 ```
 
@@ -91,7 +91,7 @@ The KITTI 2015 dataset provides stereo image pairs captured from a camera mounte
 
 Ground truth flow is decoded as:
 
-```
+```math
 fu = (IR - 2^15) / 64
 fv = (IG - 2^15) / 64
 ```
@@ -264,7 +264,7 @@ Loads ground truth annotations and computes quantitative and qualitative compari
 
 **End-Point Error (EPE)** measures the mean Euclidean distance between predicted and ground truth flow vectors over all valid annotated pixels:
 
-```
+```math
 EPE = (1 / |V|) * sum_{(x,y) in V} sqrt((u_pred - u_gt)^2 + (v_pred - v_gt)^2)
 ```
 
