@@ -115,14 +115,7 @@ optical-flow-comparative-study/
 |-- Optical_Flow_CaseStudy.pdf    # Full technical report
 |-- OpticalFlow.pdf               # A full comprehensive study material
 |
-|-- data/
-|   |-- training/
-|       |-- image_2/              # Frame t images
-|       |-- image_3/              # Frame t+1 images
-|       |-- flow_occ/             # Ground truth flow (16-bit PNG)
-|
-|-- models/
-|   |-- raft-kitti.pth            # Pretrained RAFT weights (download separately)
+
 ```
 
 ---
